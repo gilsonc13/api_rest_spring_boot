@@ -4,7 +4,7 @@ API REST para o cadastro de cliente e cidades
 
 ## 🚀 Endpoints 
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+CIDADE:
 
 ```
 GET /cidades - Listar todas as cidades
@@ -13,11 +13,30 @@ GET /cidades - Listar todas as cidades
 POST /cidades - Cadastrar uma nova cidade
 ```
 ```
-GET /cidades - Cadastrar uma nova cidade
+GET /cidades/{nome} - Buscar cidade pelo nome
 ```
 ```
-GET /cidades - Cadastrar uma nova cidade
+GET /cidades/estado/{sigla_estado} - Buscar cidades de um estado
 ```
+
+CLIENTE:
+
+```
+GET /clientes - Listar todos os clientes
+```
+```
+POST /clientes - Cadastrar um novo cliente
+```
+```
+DELETE /cliente/{id} - Deletar cliente pelo ID
+```
+```
+PUT /cliente/{id} - Alterar cliente
+```
+```
+GET /cliente/{id} - Retorna cliente pelo ID
+```
+
 
 ## 🛠️ Construído com
 
