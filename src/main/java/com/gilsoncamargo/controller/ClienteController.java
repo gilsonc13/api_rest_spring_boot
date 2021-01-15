@@ -28,7 +28,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/clientes")
 @Api(value="API REST")
 @CrossOrigin(origins="*")
 public class ClienteController {
@@ -40,13 +39,13 @@ public class ClienteController {
 	private CidadeRepository cidadeRepository;
 	
 	@ApiOperation(value="Retorna todos os clientes")
-	@GetMapping
+	@GetMapping("/clientes")
 	public List<Cliente> listar() {
 		return clienteRepository.findAll();
 	}
 	
 	@ApiOperation(value="Cadastra um cliente")
-	@PostMapping
+	@PostMapping("/clientes")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente adicionar(@Valid @RequestBody Cliente cliente) {
 		Cidade cidade = cidadeRepository.findById(cliente.getCidade().getId()).orElseThrow();
@@ -57,13 +56,13 @@ public class ClienteController {
 	}
 	
 	@ApiOperation(value="Retorna um clinete por nome")
-	@GetMapping("/{nome}")
+	@GetMapping("cliente/{nome}")
 	public List<Cliente> buscarNome(@PathVariable String nome) {
 		return clienteRepository.findByNome(nome);
 	}
 	
 	@ApiOperation(value="Retorna um cliente por id")
-	@GetMapping("/{id}")
+	@GetMapping("cliente/{id}")
 	public ResponseEntity<Cliente> buscarId(@PathVariable Long id) {
 		Optional<Cliente> cliente = clienteRepository.findById(id);
 		
@@ -75,7 +74,7 @@ public class ClienteController {
 	}
 	
 	@ApiOperation(value="Altera um cliente")
-	@PutMapping("/{id}")
+	@PutMapping("cliente/{id}")
 	public ResponseEntity<Cliente> atualizar(@Valid @PathVariable Long id, @RequestBody Cliente cliente) {
 		
 		if(!clienteRepository.existsById(id)) {
@@ -88,7 +87,7 @@ public class ClienteController {
 	}
 	
 	@ApiOperation(value="Deleta um cliente unico")
-	@DeleteMapping("/{id}")
+	@DeleteMapping("cliente/{id}")
 	public ResponseEntity<Void> deletar(@PathVariable Long id) {
 		
 		if(!clienteRepository.existsById(id)) {
