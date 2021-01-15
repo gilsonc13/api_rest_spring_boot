@@ -16,7 +16,7 @@ POST /cidades - Cadastrar uma nova cidade
 GET /cidades/{nome} - Buscar cidade pelo nome
 ```
 ```
-GET /cidades/estado/{sigla_estado} - Buscar cidades de um estado
+GET /estado/{sigla_estado} - Buscar cidades de um estado
 ```
 
 CLIENTE:
@@ -40,7 +40,7 @@ GET /cliente/{id} - Retorna cliente pelo ID
 
 ## 🛠️ Construído com
 
-* [Java](https://spring.io/projects/spring-boot) - O framework usado
-* [Spring Boot](https://spring.io/projects/spring-boot) - O framework usado
+* [Java](https://spring.io/projects/spring-boot) - Tecnologia
+* [Spring Boot](https://spring.io/projects/spring-boot) - framework
 * [Maven](https://maven.apache.org/) - Gerente de Dependência
 * [Swagger](https://swagger.io/) - Usada para gerar a documentação da API
