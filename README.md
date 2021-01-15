@@ -1,6 +1,6 @@
 # API REST com Spring Boot
 
-API REST para o cadastro de cliente e cidades
+API REST para o cadastro de clientes e cidades
 
 ## 🚀 Endpoints 
 
